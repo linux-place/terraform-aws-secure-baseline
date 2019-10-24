@@ -3,7 +3,7 @@
 # Needs to be set up in each region.
 # Global resource types are only recorded in the region specified by var.region.
 # --------------------------------------------------------------------------------------------------
-module "securityhub_baseline_baseline_ap-northeast-1" {
+module "securityhub_baseline_ap-northeast-1" {
   source = "./modules/securityhub-baseline"
 
   providers = {
