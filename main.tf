@@ -4,7 +4,6 @@ locals {
   is_member_account     = var.account_type == "member"
 
   is_cloudtrail_enabled = local.is_individual_account || local.is_master_account
-  sechub_subs_enabled   = local.is_individual_account || local.is_master_account
 }
 
 # --------------------------------------------------------------------------------------------------

@@ -1,7 +1,6 @@
 # --------------------------------------------------------------------------------------------------
-# AWS Config Baseline
+# AWS SecurityHub Baseline
 # Needs to be set up in each region.
-# Global resource types are only recorded in the region specified by var.region.
 # --------------------------------------------------------------------------------------------------
 module "securityhub_baseline_ap-northeast-1" {
   source = "./modules/securityhub-baseline"
@@ -11,6 +10,7 @@ module "securityhub_baseline_ap-northeast-1" {
   }
 
   enabled                       = contains(var.target_regions, "ap-northeast-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_ap-northeast-2" {
@@ -21,6 +21,7 @@ module "securityhub_baseline_ap-northeast-2" {
   }
 
   enabled                       = contains(var.target_regions, "ap-northeast-2")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_ap-south-1" {
@@ -31,6 +32,7 @@ module "securityhub_baseline_ap-south-1" {
   }
 
   enabled                       = contains(var.target_regions, "ap-south-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_ap-southeast-1" {
@@ -41,6 +43,7 @@ module "securityhub_baseline_ap-southeast-1" {
   }
 
   enabled                       = contains(var.target_regions, "ap-southeast-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_ap-southeast-2" {
@@ -51,6 +54,7 @@ module "securityhub_baseline_ap-southeast-2" {
   }
 
   enabled                       = contains(var.target_regions, "ap-southeast-2")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_ca-central-1" {
@@ -61,6 +65,7 @@ module "securityhub_baseline_ca-central-1" {
   }
 
   enabled                       = contains(var.target_regions, "ca-central-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_eu-central-1" {
@@ -71,6 +76,7 @@ module "securityhub_baseline_eu-central-1" {
   }
 
   enabled                       = contains(var.target_regions, "eu-central-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_eu-north-1" {
@@ -81,6 +87,7 @@ module "securityhub_baseline_eu-north-1" {
   }
 
   enabled                       = contains(var.target_regions, "eu-north-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_eu-west-1" {
@@ -91,6 +98,7 @@ module "securityhub_baseline_eu-west-1" {
   }
 
   enabled                       = contains(var.target_regions, "eu-west-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_eu-west-2" {
@@ -101,6 +109,7 @@ module "securityhub_baseline_eu-west-2" {
   }
 
   enabled                       = contains(var.target_regions, "eu-west-2")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_eu-west-3" {
@@ -111,6 +120,7 @@ module "securityhub_baseline_eu-west-3" {
   }
 
   enabled                       = contains(var.target_regions, "eu-west-3")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_sa-east-1" {
@@ -121,6 +131,7 @@ module "securityhub_baseline_sa-east-1" {
   }
 
   enabled                       = contains(var.target_regions, "sa-east-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_us-east-1" {
@@ -131,6 +142,7 @@ module "securityhub_baseline_us-east-1" {
   }
 
   enabled                       = contains(var.target_regions, "us-east-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_us-east-2" {
@@ -141,6 +153,7 @@ module "securityhub_baseline_us-east-2" {
   }
 
   enabled                       = contains(var.target_regions, "us-east-2")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_us-west-1" {
@@ -151,6 +164,7 @@ module "securityhub_baseline_us-west-1" {
   }
 
   enabled                       = contains(var.target_regions, "us-west-1")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
 
 module "securityhub_baseline_us-west-2" {
@@ -161,4 +175,5 @@ module "securityhub_baseline_us-west-2" {
   }
 
   enabled                       = contains(var.target_regions, "us-west-2")
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
 }
