@@ -31,9 +31,8 @@ resource "aws_securityhub_standards_subscription" "cis" {
   standards_arn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
 }
 
-
 data "external" "invitation" {
-  program = [  "bash", "-c", "aws  securityhub list-invitations |jq -r '.Invitations[0].InvitationId'"]
+  program = [ "bash", "-c", "aws securityhub list-invitations |jq -r '.Invitations[0].InvitationId'"]
 }
 
 resource "null_resource" "accept_invitation" {
