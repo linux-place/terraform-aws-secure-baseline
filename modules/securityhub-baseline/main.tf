@@ -33,7 +33,7 @@ resource "aws_securityhub_standards_subscription" "cis" {
 
 
 data "external" "invitation" {
-  program = [  "bash", "-c", "aws  securityhub list-invitations |jq -r '.Invitations[0].InvitationId'"
+  program = [  "bash", "-c", "aws  securityhub list-invitations |jq -r '.Invitations[0].InvitationId'"]
 }
 
 resource "null_resource" "accept_invitation" {
