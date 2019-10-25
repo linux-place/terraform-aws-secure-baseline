@@ -131,7 +131,7 @@ module "securityhub_baseline_sa-east-1" {
   }
 
   enabled                       = contains(var.target_regions, "sa-east-1")
-  #sechub_subs_enabled           = local.is_individual_account || local.is_master_account
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
   member_accounts               = var.member_accounts
 }
 
@@ -143,7 +143,7 @@ module "securityhub_baseline_us-east-1" {
   }
 
   enabled                       = contains(var.target_regions, "us-east-1")
-  # sechub_subs_enabled           = local.is_individual_account || local.is_master_account
+  sechub_subs_enabled           = local.is_individual_account || local.is_master_account
   member_accounts               = var.member_accounts
 }
 
