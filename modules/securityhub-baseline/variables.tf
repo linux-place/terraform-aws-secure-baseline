@@ -15,3 +15,8 @@ variable "member_accounts" {
   default = []
 }
 data "aws_region" "current" {}
+
+variable "master_account_id" {
+  description = "The ID of the master AWS account to which the current AWS account is associated. Required if `account_type` is `member`."
+  default     = ""
+}
