@@ -32,11 +32,14 @@ resource "aws_securityhub_standards_subscription" "cis" {
 }
 
 data "external" "invitation" {
+  count = var.enabled && var.sechub_subs_enabled ? 0 : 1
   program = [ "bash", "-c", "aws securityhub list-invitations |jq -r '.Invitations[0].InvitationId'"]
 }
 
 resource "null_resource" "accept_invitation" {
-  count = length(data.external.invitation)
+  count = var.enabled && var.sechub_subs_enabled ? 0 : 1
+  //Código anterior abaixo
+  ###count = length(data.external.invitation)
     provisioner "local-exec" {
     command = "aws securityhub accept-invitation --master-id ${var.master_account_id} --invitation-id ${data.external.invitation} --region ${data.aws_region.current.name}"
   }
