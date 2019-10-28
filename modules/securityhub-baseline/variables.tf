@@ -2,8 +2,8 @@ variable "enabled" {
   description = "The boolean flag whether this module is enabled or not. No resources are created when set to false."
   default     = true
 }
-variable "sechub_subs_enabled" {
-  description = "The boolean flag whether this module is enabled or not. No resources are created when set to false."
+variable "is_member_account" {
+  description = "The boolean flag whether the account is a member of an organization"
   default     = true
 }
 variable "member_accounts" {
